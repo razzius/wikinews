@@ -4,13 +4,16 @@ import requests
 import webbrowser
 
 
-def get_random_news_link():
+def get_wikipedia_news_page_title():
     date = datetime.date.today()
 
     date_string = date.strftime('%Y %B %d')
 
-    page = f'Portal:Current%20events/{date_string}'
-    url = f'https://en.wikipedia.org/w/api.php?action=parse&page={page}&format=json'
+    return f'Portal:Current%20events/{date_string}'
+
+
+def get_random_news_link():
+    url = f'https://en.wikipedia.org/w/api.php?action=parse&page={get_wikipedia_news_page_title()}&format=json'
 
     response = requests.get(url)
 
