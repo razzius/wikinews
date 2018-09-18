@@ -20,7 +20,7 @@ def get_news_content():
 
     data = response.json()
 
-    return data['parse']['text']
+    return data['parse']['text']['*']
 
 
 def main():
