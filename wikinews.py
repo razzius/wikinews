@@ -12,7 +12,7 @@ def get_wikipedia_news_page_title():
     return f'Portal:Current%20events/{date_string}'
 
 
-def get_random_news_link():
+def get_news_content():
     url = f'https://en.wikipedia.org/w/api.php?action=parse&page={get_wikipedia_news_page_title()}&format=json'
 
     print(url)
@@ -20,7 +20,7 @@ def get_random_news_link():
 
     data = response.json()
 
-    return random.choice(data['parse']['externallinks'])
+    return data['parse']['text']
 
 
 def main():
