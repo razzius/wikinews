@@ -5,7 +5,7 @@ import webbrowser
 
 
 def get_wikipedia_news_page_title():
-    date = datetime.date.today()
+    date = datetime.date(2018, 9, 10)
 
     date_string = date.strftime('%Y %B %d')
 
