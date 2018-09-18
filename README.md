@@ -7,7 +7,7 @@ View Wikipedia API docs [here](https://www.mediawiki.org/wiki/API:Main_page).
 ## Usage
 
 ```
-$ pip install wikinews
+$ pip install --index-url https://test.pypi.org/simple wikinews
 $ wikinews
 ```
 
