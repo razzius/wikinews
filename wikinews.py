@@ -15,6 +15,7 @@ def get_wikipedia_news_page_title():
 def get_random_news_link():
     url = f'https://en.wikipedia.org/w/api.php?action=parse&page={get_wikipedia_news_page_title()}&format=json'
 
+    print(url)
     response = requests.get(url)
 
     data = response.json()
