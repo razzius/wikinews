@@ -5,22 +5,27 @@ import webbrowser
 
 
 def get_wikipedia_news_page_title():
-    date = datetime.date(2018, 9, 10)
+    date = datetime.date.today()
 
     date_string = date.strftime('%Y %B %d')
 
     return f'Portal:Current%20events/{date_string}'
 
 
-def get_news_content():
+def get_news_data():
     url = f'https://en.wikipedia.org/w/api.php?action=parse&page={get_wikipedia_news_page_title()}&format=json'
 
-    print(url)
     response = requests.get(url)
 
-    data = response.json()
+    return response.json()
 
-    return data['parse']['text']['*']
+
+def get_news_content():
+    return get_news_data()['parse']['text']['*']
+
+
+def get_random_news_link():
+    return random.choice(get_news_data()['parse']['externallinks'])
 
 
 def main():
