@@ -7,9 +7,9 @@ import webbrowser
 def get_wikipedia_news_page_title():
     date = datetime.date.today()
 
-    date_string = date.strftime('%Y %B %d')
+    date_string = date.strftime('%Y_%B_%-d')
 
-    return f'Portal:Current%20events/{date_string}'
+    return f'Portal:Current_events/{date_string}'
 
 
 def get_news_data():
